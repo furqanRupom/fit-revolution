@@ -1,18 +1,23 @@
 import Image from "next/image";
-import bg from "../assets/cover.png";
+import bg from "../assets/gym.png";
+
 const Hero = () => {
   return (
-    <div>
-      <Image
-        className="md:object-center  object-cover pointer-events-none"
-        src={bg}
-        alt="logo"
-        style={{
-          width: "100%", // Set the width to 100% using CSS
-        }}
-      />
+    <div className="h-screen" style={{
+      backgroundImage: `url(${bg.src})`,
+      width: '100%',
+      height: '100vh',
+      backgroundSize:'cover'
+    }}>
+       <h3>
+
+       </h3>
+
     </div>
   );
 };
 
 export default Hero;
+
+
+
