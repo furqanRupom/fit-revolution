@@ -25,12 +25,12 @@ import Image from "next/image";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState(false);
-  
+
 
 
 
   return (
-    <header className="px-7 py-8   bg-white">
+    <header className="px-7 py-8   bg-white shadow fixed w-full max-w-7xl mx-auto z-50">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-2 text-2xl font-[500] hover:scale-105 duration-200 cursor-pointer">
           <span className="text-4xl t text-rose-400">
@@ -54,23 +54,23 @@ const Header = () => {
 
 
         {/* mobile menu */}
-        {open ? (
+        {/* {open ? (
           <div className="absolute lg:hidden w-full h-full top-0 left-0 bg-slate-950/25 backdrop-blur-md -z-10">
             {" "}
 
           </div>
         ) : (
           ""
-        )}
+        )} */}
 
         <div
           className={
             open
-              ? "lg:hidden absolute   duration-500 top-0 bg-white left-0 h-full  px-5"
+              ? "lg:hidden absolute   duration-500 top-0 bg-white left-0 h-full min-h-screen z-50 px-5"
               : "-translate-x-[1000px] lg:hidden absolute duration-500"
           }
         >
-          <div >
+          <div>
             <div className="flex items-center space-x-2 text-2xl font-[500] hover:scale-105 duration-200 cursor-pointer pt-8 pb-6">
               <span className="text-4xl text-rose-400">
                 <FaDumbbell />
@@ -125,7 +125,7 @@ const Header = () => {
         <div
           className={
             display
-              ? " top-0  duration-500 right-0 h-full overflow-auto fixed bg-white drop-shadow-lg hidden lg:block p-12"
+              ? " top-0  duration-500 right-0 h-full overflow-auto fixed bg-white drop-shadow-lg hidden lg:block p-12 z-20"
               : "-translate-y-[1600px] duration-500 absolute top-0 overflow-x-hidden right-0"
           }
         >
