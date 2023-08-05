@@ -54,20 +54,13 @@ const Header = () => {
 
 
         {/* mobile menu */}
-        {/* {open ? (
-          <div className="absolute lg:hidden w-full h-full top-0 left-0 bg-slate-950/25 backdrop-blur-md -z-10">
-            {" "}
 
-          </div>
-        ) : (
-          ""
-        )} */}
 
         <div
           className={
             open
               ? "lg:hidden absolute   duration-500 top-0 bg-white left-0 h-full min-h-screen z-50 px-5"
-              : "-translate-x-[1000px] lg:hidden absolute duration-500"
+              : "-translate-x-[1000px] lg:hidden absolute "
           }
         >
           <div>

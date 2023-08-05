@@ -3,7 +3,7 @@ import Image from "next/image";
 const Progress = () => {
     return (
         <section className="mt-32 xl:mt-48 mb-16 px-12 lg:px-0">
-            <h1 className=" sm:text-2xl text-center lg:text-3xl xl:text-5xl font-bold ">
+            <h1 className=" text-2xl  text-center lg:text-3xl xl:text-5xl font-bold ">
                 Our Fitness <span className="text-rose-500">Plans</span>
             </h1>
             <p className="max-w-2xl text-sm text-gray-600 mx-auto leading-relaxed text-center pt-3">Tailored strategies that guide individuals through exercises, nutrition, and lifestyle adjustments, all aimed at achieving optimal health and wellness</p>
