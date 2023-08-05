@@ -36,7 +36,7 @@ const Header = () => {
           <span className="text-4xl t text-rose-400">
             <FaDumbbell />
           </span>{" "}
-          <h3> Fit revolution.</h3>
+          <h3 className="font-semibold"> Fit revolution.</h3>
         </div>
 
         {/* for mobile devices */}
@@ -77,32 +77,32 @@ const Header = () => {
               </span>{" "}
               <h3> Fit revolution.</h3>
             </div>
-            <ul className="flex flex-col space-y-5">
-              <li className="hover:text-rose-400">
+            <ul className="flex flex-col space-y-5 font-semibold uppercase">
+              <li className="hover:text-rose-400 ">
                 <Link href="/">Home</Link>
               </li>
-              <li className="hover:text-rose-400">
-                <Link href="/">Participation Challenge</Link>
+              <li className="hover:text-rose-400 ">
+                <Link href="/"> Challenges</Link>
               </li>
-              <li className="hover:text-rose-400">
-                <Link href="/">Fitness Articles</Link>
+              <li className="hover:text-rose-400 ">
+                <Link href="/"> Articles</Link>
               </li>
-              <li className="hover:text-rose-400">
+              <li className="hover:text-rose-400 ">
                 <Link href="/">Login</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="hidden lg:block">
-          <ul className="flex  space-x-5 items-center">
+          <ul className="flex  space-x-8 font-semibold uppercase  items-center">
             <li className="hover:text-rose-400">
               <Link href="/">Home</Link>
             </li>
             <li className="hover:text-rose-400">
-              <Link href="/">Participation Challenge</Link>
+              <Link href="/"> Challenges</Link>
             </li>
             <li className="hover:text-rose-400">
-              <Link href="/">Fitness Articles</Link>
+              <Link href="/"> Articles</Link>
             </li>
             <li className="hover:text-rose-400">
               <Link href="/">Login</Link>
@@ -126,7 +126,7 @@ const Header = () => {
           className={
             display
               ? " top-0  duration-500 right-0 h-full overflow-auto fixed bg-white drop-shadow-lg hidden lg:block p-12 z-20"
-              : "-translate-y-[1600px] duration-500 absolute top-0 overflow-x-hidden right-0"
+              : "-translate-y-[1600px]  absolute top-0 overflow-x-hidden right-0"
           }
         >
           <div className="w-full ">

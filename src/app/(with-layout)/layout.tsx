@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import "./globals.css";
-import { Poppins, Inter,Dancing_Script } from "next/font/google";
+import { Poppins, Inter,Dancing_Script,Barlow } from "next/font/google";
 import Footer from "@/components/Footer";
 import logo from "../../assets/logo.png";
 import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
@@ -27,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={barlow.className}>
         <div className=" max-w-7xl mx-auto">
           <Header />
 
