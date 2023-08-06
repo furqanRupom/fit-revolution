@@ -1,22 +1,15 @@
+"use client";
 import Header from "@/components/Header";
-import "./globals.css";
-import { Poppins, Inter,Dancing_Script,Barlow } from "next/font/google";
+import "../globals.css";
+import { Poppins, Inter, Dancing_Script, Barlow } from "next/font/google";
 import Footer from "@/components/Footer";
 import logo from "../../assets/logo.png";
 import { Metadata } from "next";
+import { usePathname} from "next/navigation";
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-});
-const dancing_script = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,16 +22,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <html lang="en">
       <body className={barlow.className}>
-        <div className=" max-w-7xl mx-auto">
-          <Header />
+        <div className={pathname === "/" ? "mx-auto max-w-7xl" : ""}>
+          {pathname === "/" && <Header />}
 
-          <main className="min-h-screen mx-auto">
-            {children}
-            </main>
-          <Footer />
+          <main className="min-h-screen mx-auto">{children}</main>
+
+          {pathname === "/" && <Footer />}
         </div>
       </body>
     </html>

@@ -88,7 +88,7 @@ export class AppWriteService{
     // logout
     logOut = async() =>{
         try {
-            return await account.deleteSession("current";)
+            return await account.deleteSession("current");
         } catch (error:any) {
             console.log("something went wrong",error.message)
         }
