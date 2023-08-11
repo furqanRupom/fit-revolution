@@ -1,13 +1,34 @@
 "use client";
-
-export function generateMetadata(){
-    return{
-        title:"Login"
-    }
+import { useAuth } from "@/Context/useAuth";
+import appwriteService from "@/appwrite/config";
+import bg from "@/assets/fitness.png";
+import { useForm } from "react-hook-form";
+export function generateMetadata() {
+  return {
+    title: "Login",
+  };
 }
 
+type FormData = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 const SignUpPage = () => {
+  const { register, setValue, handleSubmit } = useForm<FormData>();
+  const {setAuthStatus} = useAuth();
+  const onSubmit =  handleSubmit(async(data: any) => {
+    try{
+      const userData = await appwriteService.createUserAccount(data);
+      if(userData) {
+        setAuthStatus(true);
+      }
+    }
+    catch(error:any){
+
+    }
+  });
   return (
     <div
       className="h-screen relative"
@@ -17,25 +38,92 @@ const SignUpPage = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute top-0 left-0 w-full h-full bg-slate-900/25  backdrop-blur-sm ">
-      </div>
-      <div className="">
+      <div className="w-full h-full bg-slate-900/50 backdrop-blur-sm flex items-center justify-center">
+        <div className="w-full mx-auto flex items-center justify-center">
+          <div className="max-w-5xl w-full mx-6 bg-slate-950/25  rounded-lg shadow-lg overflow-hidden lg:flex items-center justify-center">
+            <div className="flex-1 px-4">
+              {" "}
+              <h3 className=" text-2xl lg:text-3xl font-bold text-white ">
+                Join the Fitness Revolution Today!
+              </h3>
+              <p className="pt-3 text-gray-50  text-lg">
+                Join us today to revolutionize the way you approach fitness and
+                take the first stride towards a happier, healthier you. Your
+                fitness revolution starts here!
+              </p>
+            </div>
+            <div className="flex-1 flex justify-center items-center p-6">
+              <div className="max-w-md w-full space-y-8">
+                <div>
+                  <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
+                    Sign Up
+                  </h2>
+                </div>
+                <form onSubmit={onSubmit} className="mt-8 space-y-6">
+                  <div className="rounded-md shadow-sm ">
+                    <div>
+                      <label htmlFor="name" className="sr-only">
+                        Name
+                      </label>
+                      <input
+                        {...register("name")}
+                        id="name"
+                        name="name"
+                        type="text"
+                        autoComplete="name"
+                        required
+                        className="appearance-none rounded-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-rose-500 focus:border-rose-500 focus:z-10 sm:text-sm"
+                        placeholder="Name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="sr-only">
+                        Email address
+                      </label>
+                      <input
+                        {...register("email")}
+                        id="email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        required
+                        className="appearance-none rounded-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-rose-500 focus:border-rose-500 focus:z-10 sm:text-sm"
+                        placeholder="Email address"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="password" className="sr-only">
+                        Password
+                      </label>
+                      <input
+                        {...register("password")}
+                        id="password"
+                        name="password"
+                        type="password"
+                        autoComplete="new-password"
+                        required
+                        className="appearance-none rounded-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-rose-500 focus:border-rose-500 focus:z-10 sm:text-sm"
+                        placeholder="Password"
+                      />
+                    </div>
+                  </div>
 
-      <div>
-        <h3>Welcome to fit Revolution</h3>
-        <p>where fitness meets innovation. Join us for a transformative journey towards health and vitality, as we redefine the way you experience wellness</p>
-      </div>
-
-
-      <div>
-        <form action=""></form>
-      </div>
-
+                  <div>
+                    <button
+                      type="submit"
+                      className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default SignUpPage;
-
-
