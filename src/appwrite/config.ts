@@ -17,22 +17,23 @@ type LoginUserAccount = {
 
 
 const appWriteClient = new Client();
-
+const {appWriteUrl,appWriteProjectId} = conf
 
 // connect to app write with appWriteClient variable;
-
-appWriteClient.setEndpoint(conf.appWriteUrl).setProject(conf.appWriteProjectId);
+appWriteClient.setEndpoint(appWriteUrl).setProject(appWriteProjectId);
 
 
 // create new account;
 
 export const account = new Account(appWriteClient);
+console.log(account);
+
 
 
 
 export class AppWriteService{
     // create a new record of user inside appwrite
-
+        
      createUserAccount = async ({ name, email, password }: CreateUserAccount) => {
         try {
 
@@ -82,6 +83,7 @@ export class AppWriteService{
            return await account.get();
         } catch (error:any) {
             console.log("something went wrong",error.message);
+            console.log(error);
         }
     }
 

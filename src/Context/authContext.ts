@@ -2,8 +2,8 @@ import {createContext} from 'react'
 
 
 export const AuthContext  = createContext <{
-    authStatus:Boolean,
-    setAuthStatus: (status:Boolean) => void;
+    authStatus:boolean,
+    setAuthStatus: (status:boolean) => void;
 }>({
     authStatus:false,
     setAuthStatus:() =>{}

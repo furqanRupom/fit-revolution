@@ -1,5 +1,4 @@
 "use client";
-
 import { useAuth } from "@/Context/useAuth";
 import appwriteService from "@/appwrite/config";
 import Link from "next/link";
@@ -15,7 +14,11 @@ type FormData = {
 const LoginPage = () => {
   const { register, setValue, handleSubmit } = useForm<FormData>();
   const router = useRouter();
-  const { setAuthStatus } = useAuth();
+  const {authStatus, setAuthStatus } = useAuth();
+  if(authStatus){
+   router.push("/")
+   return <></>
+  }
   const onSubmit = handleSubmit(async (data: any) => {
     try {
       console.log(data);
