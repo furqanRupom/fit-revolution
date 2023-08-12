@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import {
   FaClock,
   FaDumbbell,
@@ -21,13 +21,12 @@ import { HiBars3CenterLeft } from "react-icons/hi2";
 import { HiArrowCircleRight, HiArrowsExpand } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Image from "next/image";
+import { useAuth } from "@/Context/useAuth";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState(false);
-
-
-
+  const { authStatus } = useAuth();
 
   return (
     <header className="px-7 py-8   bg-white shadow fixed w-full max-w-7xl mx-auto z-50">
@@ -50,11 +49,7 @@ const Header = () => {
           </span>
         </div>
 
-
-
-
         {/* mobile menu */}
-
 
         <div
           className={
@@ -80,9 +75,21 @@ const Header = () => {
               <li className="hover:text-rose-400 ">
                 <Link href="/"> Articles</Link>
               </li>
-              <li className="hover:text-rose-400 ">
-                <Link href="/">Login</Link>
-              </li>
+
+              {authStatus ? (
+                <>
+                  <li>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Logout</Link>
+                  </li>
+                </>
+              ) : (
+                <li className="hover:text-rose-400 ">
+                  <Link href="/login">Login</Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -97,9 +104,20 @@ const Header = () => {
             <li className="hover:text-rose-400">
               <Link href="/"> Articles</Link>
             </li>
-            <li className="hover:text-rose-400">
-              <Link href="/">Login</Link>
-            </li>
+            {authStatus ? (
+              <>
+                <li>
+                  <Link href="/dashboard">Dashboard</Link>
+                </li>
+                <li>
+                  <Link href="/">Logout</Link>
+                </li>
+              </>
+            ) : (
+              <li className="hover:text-rose-400 ">
+                <Link href="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
 

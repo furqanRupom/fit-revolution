@@ -2,7 +2,10 @@
 import { useAuth } from "@/Context/useAuth";
 import appwriteService from "@/appwrite/config";
 import bg from "@/assets/fitness.png";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast,Toaster } from "react-hot-toast";
 export function generateMetadata() {
   return {
     title: "Login",
@@ -17,16 +20,19 @@ type FormData = {
 
 const SignUpPage = () => {
   const { register, setValue, handleSubmit } = useForm<FormData>();
-  const {setAuthStatus} = useAuth();
-  const onSubmit =  handleSubmit(async(data: any) => {
-    try{
+  const { setAuthStatus } = useAuth();
+  const router = useRouter()
+  const onSubmit = handleSubmit(async (data: any) => {
+    try {
       const userData = await appwriteService.createUserAccount(data);
-      if(userData) {
+      if (userData) {
         setAuthStatus(true);
-      }
-    }
-    catch(error:any){
+        toast.success("User Created Successfully");
+        router.push("/");
 
+      }
+    } catch (error: any) {
+      toast.error(error.message);
     }
   });
   return (
@@ -34,7 +40,7 @@ const SignUpPage = () => {
       className="h-screen relative"
       style={{
         backgroundImage:
-          "url(https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+          "url(https://images.pexels.com/photos/4761785/pexels-photo-4761785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
         backgroundSize: "cover",
       }}
     >
@@ -76,6 +82,7 @@ const SignUpPage = () => {
                         placeholder="Name"
                       />
                     </div>
+
                     <div>
                       <label htmlFor="email" className="sr-only">
                         Email address
@@ -91,6 +98,7 @@ const SignUpPage = () => {
                         placeholder="Email address"
                       />
                     </div>
+
                     <div>
                       <label htmlFor="password" className="sr-only">
                         Password
@@ -108,6 +116,12 @@ const SignUpPage = () => {
                     </div>
                   </div>
 
+                        <p className="text-white">
+                          Already have an account?&nbsp;
+                          <Link className="text-rose-500 font-bold" href="/login">Login</Link>
+                        </p>
+
+
                   <div>
                     <button
                       type="submit"
@@ -122,6 +136,10 @@ const SignUpPage = () => {
           </div>
         </div>
       </div>
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     </div>
   );
 };
