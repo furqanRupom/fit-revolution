@@ -79,10 +79,14 @@ const Header = () => {
               {authStatus ? (
                 <>
                   <li>
-                    <Link href="/dashboard">Dashboard</Link>
+                    <Link className="hover:text-rose-400 " href="/dashboard">
+                      Dashboard
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/">Logout</Link>
+                    <Link className="hover:text-rose-400 " href="/logout">
+                      Logout
+                    </Link>
                   </li>
                 </>
               ) : (
@@ -107,10 +111,14 @@ const Header = () => {
             {authStatus ? (
               <>
                 <li>
-                  <Link href="/dashboard">Dashboard</Link>
+                  <Link className="hover:text-rose-400 " href="/dashboard">
+                    Dashboard
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Logout</Link>
+                  <Link className="hover:text-rose-400 " href="/logout">
+                    Logout
+                  </Link>
                 </li>
               </>
             ) : (

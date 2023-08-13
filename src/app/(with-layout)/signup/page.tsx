@@ -27,6 +27,7 @@ const SignUpPage = () => {
     return <></>;
   }
   const onSubmit = handleSubmit(async (data: any) => {
+    console.log(data);
     try {
       const userData = await appwriteService.createUserAccount(data);
       console.log(userData)

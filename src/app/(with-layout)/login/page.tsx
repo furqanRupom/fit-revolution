@@ -21,8 +21,8 @@ const LoginPage = () => {
   }
   const onSubmit = handleSubmit(async (data: any) => {
     try {
-      console.log(data);
       const loginUser = await appwriteService.login(data);
+      console.log(loginUser);
       if(loginUser){
         setAuthStatus(true);
         toast.success("Access Granted: Welcome to Fit Revolution!");
