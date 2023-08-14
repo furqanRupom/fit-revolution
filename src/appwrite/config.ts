@@ -1,10 +1,10 @@
 import { conf } from "@/conf/conf";
-import { Client, Account, ID } from "appwrite";
+import { Client, Account, ID } from "Appwrite";
 
 type CreateUserAccount = {
-  name: string;
-  email: string;
-  password: string;
+email:string,
+password:string
+name:string
 };
 
 type LoginUserAccount = {
@@ -18,7 +18,7 @@ const { appWriteUrl, appWriteProjectId } = conf;
 // connect to app write with appWriteClient variable;
 appWriteClient
   .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("64ce65e5f11560014776");
+  .setProject(process.env.PUBLIC_APPWRITE_PROJECT_ID!);
 
 console.log(
   process.env.PUBLIC_APPWRITE_URL,
@@ -28,18 +28,18 @@ console.log(
 // create new account;
 
 export const account = new Account(appWriteClient);
-
+console.log(ID.unique());
 export class AppWriteService {
   // create a new record of user inside appwrite
 
-  createUserAccount = async ({ name, email, password }: CreateUserAccount) => {
+  createUserAccount = async ({ email, password,name }: CreateUserAccount) => {
     try {
       // create new account
       const userAccount = await account.create(
         ID.unique(),
-        name,
         email,
-        password
+        password,
+        name
       );
     console.log(userAccount);
       // if user logged in

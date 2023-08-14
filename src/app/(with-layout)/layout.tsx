@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
   const [authStatus, setAuthStatus] = useState(false);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     appwriteService

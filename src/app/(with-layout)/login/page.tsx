@@ -4,7 +4,7 @@ import appwriteService from "@/appwrite/config";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { Toaster,toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 type FormData = {
   email: string;
@@ -14,24 +14,24 @@ type FormData = {
 const LoginPage = () => {
   const { register, setValue, handleSubmit } = useForm<FormData>();
   const router = useRouter();
-  const {authStatus, setAuthStatus } = useAuth();
-  if(authStatus){
-   router.push("/")
-   return <></>
+  const { authStatus, setAuthStatus } = useAuth();
+  if (authStatus) {
+    router.push("/");
+    return <></>;
   }
   const onSubmit = handleSubmit(async (data: any) => {
+
     try {
       const loginUser = await appwriteService.login(data);
-      console.log(loginUser);
-      if(loginUser){
+
+      if (loginUser) {
         setAuthStatus(true);
         toast.success("Access Granted: Welcome to Fit Revolution!");
         router.push("/");
       }
-    } catch (error:any) {
+    } catch (error: any) {
       toast.error(error.message);
     }
-
   });
   return (
     <div
@@ -48,10 +48,13 @@ const LoginPage = () => {
             <div className="flex-1 px-4">
               {" "}
               <h3 className=" text-2xl lg:text-3xl font-bold text-white ">
-              Log into Fit Revolution
+                Log into Fit Revolution
               </h3>
               <p className="pt-3 text-gray-50  text-lg">
-              Welcome back to Fit Revolution, where your wellness journey continues. Log in now to access a world of fitness resources tailored to your needs. We believe that every step forward is a step towards a healthier, happier life.
+                Welcome back to Fit Revolution, where your wellness journey
+                continues. Log in now to access a world of fitness resources
+                tailored to your needs. We believe that every step forward is a
+                step towards a healthier, happier life.
               </p>
             </div>
             <div className="flex-1 flex justify-center items-center p-6">

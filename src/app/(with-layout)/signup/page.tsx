@@ -1,6 +1,6 @@
 "use client";
 import { useAuth } from "@/Context/useAuth";
-import appwriteService, { account } from "@/appwrite/config";
+import appwriteService, { AppWriteService, account } from "@/appwrite/config";
 import bg from "@/assets/fitness.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { toast, Toaster } from "react-hot-toast";
 export function generateMetadata() {
   return {
-    title: "Login",
+    title: "Sign Up",
   };
 }
 
@@ -24,13 +24,15 @@ const SignUpPage = () => {
   const { authStatus, setAuthStatus } = useAuth();
   if (authStatus) {
     router.push("/");
+
     return <></>;
   }
   const onSubmit = handleSubmit(async (data: any) => {
-    console.log(data);
+   const {email,password,name} = data
+
     try {
-      const userData = await appwriteService.createUserAccount(data);
-      console.log(userData)
+      const userData = await appwriteService.createUserAccount({email,password,name});
+
       if (userData) {
         setAuthStatus(true);
         toast.success("User Created Successfully");
