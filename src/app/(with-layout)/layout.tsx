@@ -49,7 +49,7 @@ export default function RootLayout({
             </div>
           </AuthProvider>
         ) : (
-          <div className="w-full h-screen h-full flex items-center justify-center">
+          <div className="w-full h-screen  flex items-center justify-center">
             <Image src={loading} alt="loading" />
           </div>
         )}
