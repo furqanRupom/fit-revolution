@@ -3,12 +3,13 @@ import Header from "@/components/Header";
 import "../globals.css";
 import { Poppins, Inter, Dancing_Script, Barlow } from "next/font/google";
 import Footer from "@/components/Footer";
-import logo from "../../assets/logo.png";
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import appwriteService from "@/appwrite/config";
 import { AuthProvider } from "@/Context/authContext";
+import loading from "../../../public/gif.gif"
+import Image from "next/image";
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -48,7 +49,9 @@ export default function RootLayout({
             </div>
           </AuthProvider>
         ) : (
-          <h3>Loading</h3>
+          <div className="w-full h-screen h-full flex items-center justify-center">
+            <Image src={loading} alt="loading" />
+          </div>
         )}
       </body>
     </html>
