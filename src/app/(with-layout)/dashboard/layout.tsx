@@ -20,8 +20,8 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
     return <></>;
   }
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[0fr,4fr]">
-      <div className={open ? "fixed bg-rose-500 lg:static" : "hidden lg:block"}>
+    <section className="grid grid-cols-1 lg:grid-cols-[0fr,4fr] min-h-screen">
+      <div className={open ? "fixed bg-rose-500 lg:static z-50" : "hidden lg:block"}>
         <div>
           <Sidebar />
         </div>
