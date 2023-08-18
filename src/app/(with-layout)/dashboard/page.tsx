@@ -61,7 +61,7 @@ const profilePage = () => {
             <Charts />
           </div>
 
-          <aside className="flex  lg:flex-col items-center  justify-evenly">
+          <aside className="flex  lg:flex-col items-center  justify-evenly mt-3">
             <div className="bg-white shadow rounded-2xl py-4 px-3 ">
               <div className=" text-xl lg:text-3xl text-rose-500 font-semibold flex  items-center space-x-3">
                 <FaWalking />
@@ -151,7 +151,7 @@ const profilePage = () => {
 
       {/* profile section */}
 
-      <section className="shadow-lg py-6 px-3">
+      <section className="shadow-md py-6 px-3 mr-2">
         {/* first section */}
         {/* TODO : We have a work to make some data dynamic */}
 
