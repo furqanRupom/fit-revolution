@@ -6,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 const Sidebar = () => {
   return (
-    <section className="shadow-lg min-h-[900px] z-30 bg-white">
+    <section className="shadow-lg min-h-[800px] z-30 bg-white">
       <h3 className="p-2 w-fit mx-auto  lg:mt-5 text-3xl font-semibold rounded-xl bg-rose-500 text-white shadow ">
         Fit
       </h3>
