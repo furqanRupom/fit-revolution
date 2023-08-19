@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast, Toaster } from "react-hot-toast";
+import axios from "axios"
 export function generateMetadata() {
   return {
     title: "Sign Up",
@@ -27,11 +28,13 @@ const SignUpPage = () => {
 
     return <></>;
   }
-  const onSubmit = handleSubmit(async (data: any) => {
-   const {email,password,name} = data
+  const onSubmit = handleSubmit(async (users: any) => {
+   const {email,password,name} = users
 
     try {
       const userData = await appwriteService.createUserAccount({email,password,name});
+       axios.post("/api/users",users)
+       .then(res=> console.log(res.data));
 
       if (userData) {
         setAuthStatus(true);

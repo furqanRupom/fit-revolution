@@ -1,6 +1,7 @@
 "use client";
 import { useAuth } from "@/Context/useAuth";
 import appwriteService from "@/appwrite/config";
+import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -19,10 +20,11 @@ const LoginPage = () => {
     router.push("/");
     return <></>;
   }
-  const onSubmit = handleSubmit(async (data: any) => {
+  const onSubmit = handleSubmit(async (users: any) => {
 
     try {
-      const loginUser = await appwriteService.login(data);
+      const loginUser = await appwriteService.login(users);
+        axios.post("/api/users",users).then(res=> console.log(res.data));
 
       if (loginUser) {
         setAuthStatus(true);
