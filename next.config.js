@@ -5,7 +5,8 @@ const nextConfig = {
       },
     env:{
       PUBLIC_APPWRITE_URL : "https://cloud.appwrite.io/v1",
-      PUBLIC_APPWRITE_PROJECT_ID:"64ce65e5f11560014776"
+      PUBLIC_APPWRITE_PROJECT_ID:"64ce65e5f11560014776",
+      
     }
 }
 
