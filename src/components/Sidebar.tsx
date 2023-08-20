@@ -1,7 +1,8 @@
+
 import Link from "next/link";
 import { MdViewSidebar } from "react-icons/md";
 import { GiGymBag } from "react-icons/gi";
-import { FaUsers } from "react-icons/fa";
+import { FaPlus, FaUsers } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 const Sidebar = () => {
@@ -19,6 +20,10 @@ const Sidebar = () => {
           href="/dashboard/challenges"
         >
           <GiGymBag />
+        </Link>
+
+        <Link className="hover:text-rose-600 duration-100" href="/dashboard/addChallenges">
+          <FaPlus />
         </Link>
         <Link
           className="hover:text-rose-600 duration-100"
