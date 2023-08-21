@@ -2,12 +2,15 @@
 
 import { useUser } from "@/hooks/useUser";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 const ChallengesPage: React.FC = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const { user } = useUser();
@@ -18,25 +21,33 @@ const ChallengesPage: React.FC = () => {
       const {
         challengeName,
         goals,
+        image,
         description,
         progressTracking,
         duration,
         rewards,
+        price,
+
       } = data;
       const challengesData = {
         creatorName: user?.name,
         creatorEmail: user?.email,
         challengeName,
         goals,
+        image,
         description,
         progressTracking,
         duration,
         rewards,
+        price
       };
       axios.post("/api/challenges", challengesData).then((res) => {
         console.log(res.data);
       });
       toast.success("New Challenges Successfully added");
+      reset();
+      router.push(`/dashboard/myChallenges/${user?.email}`)
+
     } catch (error: any) {
       toast.error(error.message);
     }
@@ -81,6 +92,20 @@ const ChallengesPage: React.FC = () => {
                 {...register("goals", { required: "Goals are required" })}
                 type="text"
                 id="challengeName"
+                className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="image"
+                className="block font-medium mb-1 text-gray-700"
+              >
+                challenge Image URL
+              </label>
+
+              <input
+                {...register("image", { required: "Image are required" })}
+                type="text"
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -144,6 +169,19 @@ const ChallengesPage: React.FC = () => {
                 {...register("rewards", { required: "Rewards are required" })}
                 type="text"
                 id="rewards"
+                className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="Prices"
+                className="block font-medium mb-1 text-gray-700"
+              >
+                Price
+              </label>
+              <input
+                {...register("price", { required: "price are required" })}
+                type="text"
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>

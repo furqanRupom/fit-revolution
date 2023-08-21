@@ -6,10 +6,12 @@ const challengesDoc = new Schema({
     creatorEmail:String,
     challengeName:String,
     goals:String,
+    image:String,
     description:String,
     progressTracking:String,
     duration:String,
-    rewards:String
+    rewards:String,
+    price:String
 })
 
 
