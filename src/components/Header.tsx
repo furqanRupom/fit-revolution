@@ -29,7 +29,7 @@ const Header = () => {
   const { authStatus } = useAuth();
 
   return (
-    <header className="px-7 py-8   bg-white shadow fixed w-full max-w-7xl mx-auto z-50">
+    <header className="px-7 py-8   bg-white shadow fixed w-full mx-auto z-50">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-2 text-2xl font-[500] hover:scale-105 duration-200 cursor-pointer">
           <span className="text-4xl t text-rose-400">

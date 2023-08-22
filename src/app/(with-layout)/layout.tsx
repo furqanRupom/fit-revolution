@@ -41,15 +41,7 @@ export default function RootLayout({
         {!loader ? (
           <AuthProvider value={{ authStatus, setAuthStatus }}>
             <div
-              className={
-                pathname === "/login" ||
-                pathname === "signup" ||
-                pathname === "/dashboard" ||
-                pathname === "/dashboard/addChallenges" ||
-                pathname === "/dashboard/MyChallenges"
-                  ? ""
-                  : "mx-auto max-w-7xl"
-              }
+             
             >
               {pathname === "/login" ||
               pathname === "signup" ||

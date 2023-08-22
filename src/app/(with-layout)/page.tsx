@@ -11,10 +11,14 @@ import {useState,useEffect} from "react"
 export default function Home() {
 
   return (
-  <div className=" max-w-7xl mx-auto">
+  <div className="  mx-auto">
     <Hero />
+    <div className='px-4'>
+
     <Progress />
     <Raise />
+
+    </div>
   </div>
   )
 }
