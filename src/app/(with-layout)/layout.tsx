@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import appwriteService from "@/appwrite/config";
 import { AuthProvider } from "@/Context/authContext";
-import loading from "../../../public/gif.gif"
+import loading from "../../../public/gif.gif";
 import Image from "next/image";
 const barlow = Barlow({
   subsets: ["latin"],
@@ -28,7 +28,7 @@ export default function RootLayout({
   const pathname = usePathname();
   const [authStatus, setAuthStatus] = useState(false);
   const [loader, setLoader] = useState(true);
-
+  console.log(pathname);
   useEffect(() => {
     appwriteService
       .loggedIn()
@@ -40,12 +40,37 @@ export default function RootLayout({
       <body className={barlow.className}>
         {!loader ? (
           <AuthProvider value={{ authStatus, setAuthStatus }}>
-            <div className={pathname === "/" ? "mx-auto max-w-7xl" : ""}>
-              {pathname === "/" && <Header />}
+            <div
+              className={
+                pathname === "/login" ||
+                pathname === "signup" ||
+                pathname === "/dashboard" ||
+                pathname === "/dashboard/addChallenges" ||
+                pathname === "/dashboard/MyChallenges"
+                  ? ""
+                  : "mx-auto max-w-7xl"
+              }
+            >
+              {pathname === "/login" ||
+              pathname === "signup" ||
+              pathname === "/dashboard" ||
+              pathname === "/dashboard/addChallenges" ||
+              pathname === "/dashboard/MyChallenges" ? (
+                ""
+              ) : (
+                <Header />
+              )}
 
               <main className="min-h-screen mx-auto">{children}</main>
-
-              {pathname === "/" && <Footer />}
+              {pathname === "/login" ||
+              pathname === "signup" ||
+              pathname === "/dashboard" ||
+              pathname === "/dashboard/addChallenges" ||
+              pathname === "/dashboard/MyChallenges" ? (
+                ""
+              ) : (
+                <Footer />
+              )}
             </div>
           </AuthProvider>
         ) : (

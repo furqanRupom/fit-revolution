@@ -70,10 +70,10 @@ const Header = () => {
                 <Link href="/">Home</Link>
               </li>
               <li className="hover:text-rose-400 ">
-                <Link href="/"> Challenges</Link>
+                <Link href="/challenges"> Challenges</Link>
               </li>
               <li className="hover:text-rose-400 ">
-                <Link href="/"> Articles</Link>
+                <Link href="/articles"> Articles</Link>
               </li>
 
               {authStatus ? (
@@ -103,10 +103,10 @@ const Header = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="hover:text-rose-400">
-              <Link href="/"> Challenges</Link>
+              <Link href="/challenges"> Challenges</Link>
             </li>
             <li className="hover:text-rose-400">
-              <Link href="/"> Articles</Link>
+              <Link href="/articles"> Articles</Link>
             </li>
             {authStatus ? (
               <>
