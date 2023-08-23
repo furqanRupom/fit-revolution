@@ -20,7 +20,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
     return <></>;
   }
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[0fr,4fr] min-h-screen">
+    <section className="grid  lg:grid-cols-[0fr,4fr] min-h-screen">
       <div className={open ? "fixed bg-rose-500 lg:static z-50" : "hidden lg:block"}>
         <div>
           <Sidebar />
@@ -29,7 +29,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
 
       <button
         onClick={() => setOpen(!open)}
-        className="flex  items-end justify-end px-4 pt-3 lg:hidden text-2xl cursor-pointer text-rose-400"
+        className="flex  items-end justify-end px-4 pt-3 lg:hidden text-2xl cursor-pointer text-rose-400 h-fit"
       >
         <FaBars />
       </button>

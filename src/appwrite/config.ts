@@ -20,15 +20,10 @@ appWriteClient
   .setEndpoint("https://cloud.appwrite.io/v1")
   .setProject(process.env.PUBLIC_APPWRITE_PROJECT_ID!);
 
-console.log(
-  process.env.PUBLIC_APPWRITE_URL,
-  process.env.PUBLIC_APPWRITE_PROJECT_ID
-);
 
 // create new account;
 
 export const account = new Account(appWriteClient);
-console.log(ID.unique());
 export class AppWriteService {
   // create a new record of user inside appwrite
 
@@ -41,7 +36,6 @@ export class AppWriteService {
         password,
         name
       );
-    console.log(userAccount);
       // if user logged in
 
       if (userAccount) return this.login({ email, password });

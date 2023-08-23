@@ -17,7 +17,7 @@ const Sidebar = () => {
         </Link>
         <Link
           className="hover:text-rose-600 duration-100"
-          href="/dashboard/challenges"
+          href="/dashboard/myChallenges"
         >
           <GiGymBag />
         </Link>

@@ -1,6 +1,6 @@
 import dbConnect from "@/db/dbConnect";
 import { Challenges } from "@/models/challenges";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (request: NextResponse) => {
   try {
@@ -31,11 +31,7 @@ export const GET = async () => {
   try {
     await dbConnect();
     const challenges = await Challenges.find();
-    if (challenges)
-      return NextResponse.json(
-       challenges,
-        { status: 200 }
-      );
+    if (challenges) return NextResponse.json(challenges, { status: 200 });
     else
       return NextResponse.json(
         { message: "Something went wrong" },
@@ -46,29 +42,24 @@ export const GET = async () => {
   }
 };
 
+export const DELETE = async (request: NextRequest) => {
+  try {
+    await dbConnect();
+    const id = request.nextUrl.searchParams.get("id");
+    console.log(id);
 
-
-
-
-
-export const DELETE = async ({ params }: any) => {
-    try {
-        await dbConnect();
-        const id = params.id;
-        const query = await Challenges.findById(id);
-        const result = await Challenges.deleteOne(query);
-        if (result)
-          return NextResponse.json(
-            { message: "challenges successfully deleted" },
-            { status: 200 }
-          );
-        else
-          return NextResponse.json(
-            { message: "challenges delete process failed" },
-            { status: 403 }
-          );
-    } catch (error:any) {
-        return NextResponse.json({error:error.message},{status:403})
-    }
-
+    const result = await Challenges.findByIdAndDelete(id);
+    if (result)
+      return NextResponse.json(
+        { message: "challenges successfully deleted" },
+        { status: 200 }
+      );
+    else
+      return NextResponse.json(
+        { message: "challenges delete process failed" },
+        { status: 403 }
+      );
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 403 });
+  }
 };

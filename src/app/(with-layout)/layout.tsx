@@ -5,7 +5,7 @@ import { Poppins, Inter, Dancing_Script, Barlow } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import appwriteService from "@/appwrite/config";
 import { AuthProvider } from "@/Context/authContext";
 import loading from "../../../public/gif.gif";
@@ -28,7 +28,7 @@ export default function RootLayout({
   const pathname = usePathname();
   const [authStatus, setAuthStatus] = useState(false);
   const [loader, setLoader] = useState(true);
-  console.log(pathname);
+
   useEffect(() => {
     appwriteService
       .loggedIn()
@@ -40,28 +40,23 @@ export default function RootLayout({
       <body className={barlow.className}>
         {!loader ? (
           <AuthProvider value={{ authStatus, setAuthStatus }}>
-            <div
-             
-            >
-              {pathname === "/login" ||
-              pathname === "signup" ||
-              pathname === "/dashboard" ||
-              pathname === "/dashboard/addChallenges" ||
-              pathname === "/dashboard/MyChallenges" ? (
-                ""
-              ) : (
+            <div>
+              {pathname === "/" ||
+              pathname === "articles" ||
+              pathname === "/challenges" ? (
                 <Header />
+              ) : (
+                ""
               )}
 
               <main className="min-h-screen mx-auto">{children}</main>
-              {pathname === "/login" ||
-              pathname === "signup" ||
-              pathname === "/dashboard" ||
-              pathname === "/dashboard/addChallenges" ||
-              pathname === "/dashboard/MyChallenges" ? (
-                ""
-              ) : (
+
+              {pathname === "/" ||
+              pathname === "articles" ||
+              pathname === "/challenges" ? (
                 <Footer />
+              ) : (
+                ""
               )}
             </div>
           </AuthProvider>

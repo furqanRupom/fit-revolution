@@ -24,7 +24,6 @@ const profilePage = () => {
       }
     })();
   }, []);
-  console.log(user);
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[3fr,1fr] min-h-screen  lg:px-0">
       <section className=" px-2 pt-12 lg:px-12 lg:pt-8 lg:pb-3">

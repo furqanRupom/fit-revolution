@@ -5,8 +5,9 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
-const ChallengesPage: React.FC = () => {
+const updateChallengePage: React.FC = ({params}:any) => {
   const router = useRouter();
+const {id} = params
   const {
     register,
     handleSubmit,
@@ -29,9 +30,8 @@ const ChallengesPage: React.FC = () => {
         price,
 
       } = data;
-      const challengesData = {
-        creatorName: user?.name,
-        creatorEmail: user?.email,
+      const updateData = {
+
         challengeName,
         goals,
         image,
@@ -41,10 +41,9 @@ const ChallengesPage: React.FC = () => {
         rewards,
         price
       };
-      axios.post("/api/challenges", challengesData).then((res) => {
-        console.log(res.data);
-      });
-      toast.success("New Challenges Successfully added");
+
+      axios.put(`/api/challenges/${id}`,updateData)
+      toast.success("Challenge Successfully updated");
       reset();
       router.push(`/dashboard/myChallenges`)
 
@@ -57,7 +56,7 @@ const ChallengesPage: React.FC = () => {
     <div className="overflow-hidden flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl my-20">
         <h1 className="text-4xl font-semibold text-center mb-6 text-rose-500">
-          Add a New Challenge
+         Update Challenge
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -192,7 +191,7 @@ const ChallengesPage: React.FC = () => {
               type="submit"
               className=" bg-rose-500 text-white rounded-lg hover:bg-rose-600 duration-150 py-3 text-2xl font-semibold w-full"
             >
-              Add Challenge
+              Update Challenge
             </button>
           </div>
         </form>
@@ -207,4 +206,4 @@ const ChallengesPage: React.FC = () => {
   );
 };
 
-export default ChallengesPage;
+export default updateChallengePage;

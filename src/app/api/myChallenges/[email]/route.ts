@@ -7,6 +7,7 @@ export const GET = async (request: NextRequest, { params }: any) => {
     await dbConnect();
 
     const email = params?.email;
+    console.log(email)
     const query = await Challenges.find({ creatorEmail: email });
     if (query) {
       return NextResponse.json(query);
