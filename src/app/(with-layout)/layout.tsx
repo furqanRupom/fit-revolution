@@ -39,12 +39,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={barlow.className}>
 
-        
+
         {!loader ? (
           <AuthProvider value={{ authStatus, setAuthStatus }}>
             <div>
               {pathname === "/" ||
-              pathname === "articles" ||
+              pathname === "/articles" ||
               pathname === "/challenges" ? (
                 <Header />
               ) : (
@@ -54,7 +54,7 @@ export default function RootLayout({
               <main className="min-h-screen mx-auto">{children}</main>
 
               {pathname === "/" ||
-              pathname === "articles" ||
+              pathname === "/articles" ||
               pathname === "/challenges" ? (
                 <Footer />
               ) : (

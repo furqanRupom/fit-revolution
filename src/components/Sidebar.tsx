@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { MdViewSidebar } from "react-icons/md";
 import { GiGymBag } from "react-icons/gi";
-import { FaPlus, FaUsers } from "react-icons/fa";
+import { FaHome, FaPlus, FaUsers } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 const Sidebar = () => {
@@ -25,17 +25,9 @@ const Sidebar = () => {
         <Link className="hover:text-rose-600 duration-100" href="/dashboard/addChallenges">
           <FaPlus />
         </Link>
-        <Link
-          className="hover:text-rose-600 duration-100"
-          href="/dashboard/users"
-        >
-          <FaUsers />
-        </Link>
-        <Link
-          className="hover:text-rose-600 duration-100"
-          href="/dashboard/settings"
-        >
-          <FiSettings />
+        <div className="divider "></div>
+        <Link className="hover:text-rose-600 duration-100" href="/">
+          <FaHome />
         </Link>
         <Link className="hover:text-rose-600 duration-100" href="/logout">
           <IoMdLogOut />
