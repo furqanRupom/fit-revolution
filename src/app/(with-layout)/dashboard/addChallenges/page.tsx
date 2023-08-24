@@ -1,5 +1,6 @@
 "use client";
 
+import useChallenge from "@/hooks/useChallenge";
 import { useUser } from "@/hooks/useUser";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -7,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 const ChallengesPage: React.FC = () => {
   const router = useRouter();
+  const {refetch} = useChallenge();
   const {
     register,
     handleSubmit,
@@ -46,6 +48,7 @@ const ChallengesPage: React.FC = () => {
       });
       toast.success("New Challenges Successfully added");
       reset();
+      refetch();
       router.push(`/dashboard/myChallenges`)
 
     } catch (error: any) {

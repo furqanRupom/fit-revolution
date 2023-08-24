@@ -38,6 +38,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={barlow.className}>
+
+        
         {!loader ? (
           <AuthProvider value={{ authStatus, setAuthStatus }}>
             <div>

@@ -10,6 +10,11 @@ import { FaBars } from "react-icons/fa";
 import Image from "next/image";
 import loading from "../../../public/gif.gif";
 import { AuthProvider } from "@/Context/authContext";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
 const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -19,8 +24,18 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
     router.push("/login");
     return <></>;
   }
+
+  const queryClient = new QueryClient()
+
+
+
   return (
-    <section className="grid  lg:grid-cols-[0fr,4fr] min-h-screen">
+
+
+
+      <QueryClientProvider client={queryClient}>
+
+      <section className="grid  lg:grid-cols-[0fr,4fr] min-h-screen">
       <div className={open ? "fixed bg-rose-500 lg:static z-50" : "hidden lg:block"}>
         <div>
           <Sidebar />
@@ -35,6 +50,10 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
       </button>
       <div>{children}</div>
     </section>
+
+      </QueryClientProvider>
+
+
   );
 };
 
