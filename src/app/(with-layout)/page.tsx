@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
-    <div className="  mx-auto">
+    <div className="mx-auto">
       <Hero />
       <div className="px-4 max-w-7xl mx-auto">
         <Progress />

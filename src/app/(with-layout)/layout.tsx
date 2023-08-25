@@ -51,7 +51,7 @@ export default function RootLayout({
                 ""
               )}
 
-              <main className="min-h-screen mx-auto">{children}</main>
+              <main >{children}</main>
 
               {pathname === "/" ||
               pathname === "/articles" ||
