@@ -8,7 +8,7 @@ import Image from "next/image";
 const PricingPlan: React.FC = () => {
   return (
     <section className="mt-20 mb-8 ">
-      <h1 className=" text-3xl  text-center lg:text-3xl py-12 xl:text-5xl font-bold ">
+      <h1 className=" text-3xl  text-center lg:text-3xl py-24 xl:text-5xl font-bold ">
         Our Pricing<span className="text-rose-500"> Plans</span>
       </h1>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 gap-y-[75px] lg:gap-y-0 lg:gap-10 max-w-7xl mx-auto pt-12">
