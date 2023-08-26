@@ -3,7 +3,7 @@ import {MdVerifiedUser} from 'react-icons/md'
 
 const Raise = () => {
     return (
-        <section className="px-8 lg:px-0 mt-32 mb-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section className="px-8 lg:px-0 mt-32 mb-16 grid grid-cols-1 justify-items-center lg:justify-items-start lg:grid-cols-2 gap-10">
             <div className="relative">
                 <Image className="z-20" src="https://images.pexels.com/photos/1756959/pexels-photo-1756959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={500} height={500}  alt="raise picture"/>
 

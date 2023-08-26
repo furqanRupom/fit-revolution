@@ -21,7 +21,7 @@ const articlesPage = () => {
       {/*  article image and title */}
       <div className="h-96 relative ">
         <Image
-          className="w-full blur-sm object-cover h-96 object-center "
+          className="w-full blur-sm object-cover h-96 object-center pt-12"
           width={500}
           height={200}
           src="https://images.pexels.com/photos/17898142/pexels-photo-17898142/free-photo-of-woman-exercising-at-the-gym.jpeg?auto=compress&cs=tinysrgb&w=600"

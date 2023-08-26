@@ -22,6 +22,7 @@ import { HiArrowCircleRight, HiArrowsExpand } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 import { useAuth } from "@/Context/useAuth";
+import TopHeader from "./TopHeader";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -29,7 +30,11 @@ const Header = () => {
   const { authStatus } = useAuth();
 
   return (
-    <header className="px-7 py-8   bg-white shadow fixed w-full mx-auto z-50">
+
+    <header className="bg-white z-50">
+         <TopHeader />
+    <header className="px-7 py-8   bg-white  fixed w-full mx-auto z-50">
+
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-2 text-2xl font-[500] hover:scale-105 duration-200 cursor-pointer">
           <span className="text-4xl t text-rose-400">
@@ -97,6 +102,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
+
         <div className="hidden lg:block">
           <ul className="flex  space-x-8 font-semibold uppercase  items-center">
             <li className="hover:text-rose-400">
@@ -263,6 +269,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+    </header>
     </header>
   );
 };

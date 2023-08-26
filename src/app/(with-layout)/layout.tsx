@@ -10,6 +10,7 @@ import appwriteService from "@/appwrite/config";
 import { AuthProvider } from "@/Context/authContext";
 import loading from "../../../public/gif.gif";
 import Image from "next/image";
+import TopHeader from "@/components/TopHeader";
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -46,7 +47,10 @@ export default function RootLayout({
               {pathname === "/" ||
               pathname === "/articles" ||
               pathname === "/challenges" ? (
+                <>
+
                 <Header />
+                </>
               ) : (
                 ""
               )}
