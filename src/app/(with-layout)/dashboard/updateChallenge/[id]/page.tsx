@@ -3,11 +3,12 @@
 import { useUser } from "@/hooks/useUser";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
-const updateChallengePage: React.FC = ({params}:any) => {
+const updateChallengePage: React.FC = ({ params }: any) => {
   const router = useRouter();
-const {id} = params
+  const { id } = params;
   const {
     register,
     handleSubmit,
@@ -15,6 +16,23 @@ const {id} = params
     formState: { errors },
   } = useForm();
   const { user } = useUser();
+
+  const [challenge, getChallenge] = useState({});
+  useEffect(() => {
+    axios.get(`/api/challenges/${id}`).then((res) => getChallenge(res.data));
+  }, []);
+
+  const {
+    challengeName,
+    goals,
+    image,
+    description,
+    progressTracking,
+    duration,
+    rewards,
+    price,
+  }: any = challenge;
+
   const onSubmit = (data: any) => {
     // Handle form submission, e.g., send data to the server
 
@@ -28,10 +46,8 @@ const {id} = params
         duration,
         rewards,
         price,
-
       } = data;
       const updateData = {
-
         challengeName,
         goals,
         image,
@@ -39,14 +55,13 @@ const {id} = params
         progressTracking,
         duration,
         rewards,
-        price
+        price,
       };
 
-      axios.put(`/api/challenges/${id}`,updateData)
+      axios.put(`/api/challenges/${id}`, updateData);
       toast.success("Challenge Successfully updated");
       reset();
-      router.push(`/dashboard/myChallenges`)
-
+      router.push(`/dashboard/myChallenges`);
     } catch (error: any) {
       toast.error(error.message);
     }
@@ -56,7 +71,7 @@ const {id} = params
     <div className="overflow-hidden flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-5xl my-20">
         <h1 className="text-4xl font-semibold text-center mb-6 text-rose-500">
-         Update Challenge
+          Update Challenge
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -76,6 +91,7 @@ const {id} = params
                 })}
                 type="text"
                 id="challengeName"
+                defaultValue={challengeName}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -91,6 +107,7 @@ const {id} = params
                 {...register("goals", { required: "Goals are required" })}
                 type="text"
                 id="challengeName"
+                defaultValue={goals}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -105,6 +122,7 @@ const {id} = params
               <input
                 {...register("image", { required: "Image are required" })}
                 type="text"
+                defaultValue={image}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -120,6 +138,7 @@ const {id} = params
                   required: "Description is required",
                 })}
                 id="description"
+                defaultValue={description}
                 rows={5}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
@@ -140,6 +159,7 @@ const {id} = params
                 })}
                 type="text"
                 id="progressTracking"
+                defaultValue={progressTracking}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -154,6 +174,7 @@ const {id} = params
                 {...register("duration", { required: "Duration is required" })}
                 type="text"
                 id="duration"
+                defaultValue={duration}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -168,6 +189,7 @@ const {id} = params
                 {...register("rewards", { required: "Rewards are required" })}
                 type="text"
                 id="rewards"
+                defaultValue={rewards}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>
@@ -181,6 +203,7 @@ const {id} = params
               <input
                 {...register("price", { required: "price are required" })}
                 type="text"
+                defaultValue={price}
                 className="w-9/12 px-3 py-2 rounded-2xl focus:ring-rose-500 focus:outline-none ring ring-rose-200 my-2"
               />
             </div>

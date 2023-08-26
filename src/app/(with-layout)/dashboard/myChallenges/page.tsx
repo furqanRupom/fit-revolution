@@ -6,7 +6,6 @@ import { Challenges } from "@/models/challenges";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { isArray } from "chart.js/dist/helpers/helpers.core";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
@@ -15,6 +14,7 @@ import Swal from "sweetalert2";
 
 const myChallengesPage = () => {
  const {refetch,data} = useChallenge();
+ const [loading,setLoading] = useState();
 
 
   const handleDelete = (id: any) => {
@@ -42,6 +42,14 @@ const myChallengesPage = () => {
       }
     });
   };
+
+
+ 
+
+
+
+
+
 
   return (
     <>
@@ -79,7 +87,7 @@ const myChallengesPage = () => {
                       <div className="flex items-center space-x-3">
                         <div className="avatar">
                           <div className="mask mask-squircle w-12 h-12">
-                            <Image
+                            <img
                               width={200}
                               height={200}
                               src={image}

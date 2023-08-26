@@ -30,7 +30,7 @@ const Service = () => {
     ],
   };
   return (
-    <section className="h-screen mt-48 mb-24 ">
+    <section className=" mt-44 mb-16 ">
       <h1 className=" text-2xl  text-center lg:text-3xl py-12 xl:text-5xl font-bold ">
         Services we<span className="text-rose-500"> Provide</span>
       </h1>
@@ -43,7 +43,7 @@ const Service = () => {
             </div>
 
             <h3 className="text-3xl font-bold py-3">We provide treadmills</h3>
-            <p className="leading-relaxed text-gray-600 text-lg py-4">
+            <p className="leading-relaxed text-gray-600 py-2  lg:text-lg lg:py-4">
               We offer a variety of treadmills to cater to your fitness goals.
               Enhance your workouts with our diverse range of treadmill options
             </p>
@@ -66,8 +66,8 @@ const Service = () => {
               <Image src={icons2} alt="icons2" />
             </div>
 
-            <h3 className="text-3xl font-bold py-3">Muscle Building Mastery</h3>
-            <p className="leading-relaxed text-gray-600 text-lg py-4">
+            <h3 className=" text-3xl font-bold py-3">Muscle Building </h3>
+            <p className="leading-relaxed text-gray-600 py-2  lg:text-lg lg:py-4">
             Transform your physique with targeted exercises designed to build lean muscle and enhance definition for a powerful look.
             </p>
 
@@ -89,8 +89,8 @@ const Service = () => {
               <Image height={64} src={icons3} alt="icons1" />
             </div>
 
-            <h3 className="text-3xl font-bold py-3">Dynamic Fitness Fusion</h3>
-            <p className="leading-relaxed text-gray-600 text-lg py-4">
+            <h3 className="text-3xl font-bold py-3"> Fitness Fusion</h3>
+            <p className="leading-relaxed text-gray-600 py-2  lg:text-lg lg:py-4">
             Experience high-energy workouts combining cardio, strength, and kettlebell training to elevate your fitness levels.
             </p>
 
@@ -106,7 +106,7 @@ const Service = () => {
           </div>
         </div>
 
-      
+
 
         <div className="px-4">
 
@@ -117,7 +117,7 @@ const Service = () => {
             </div>
 
             <h3 className="text-3xl font-bold py-3">Kettlebell Core Ignite</h3>
-            <p className="leading-relaxed text-gray-600 text-lg py-4">
+            <p className="leading-relaxed text-gray-600 py-2  lg:text-lg lg:py-4">
             Learn proper techniques and unlock the potential of kettlebell workouts, boosting strength, stability.
             </p>
 

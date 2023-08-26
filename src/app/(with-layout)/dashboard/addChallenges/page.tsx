@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 const ChallengesPage: React.FC = () => {
   const router = useRouter();
-  const {refetch} = useChallenge();
+  const { refetch } = useChallenge();
   const {
     register,
     handleSubmit,
@@ -29,7 +29,6 @@ const ChallengesPage: React.FC = () => {
         duration,
         rewards,
         price,
-
       } = data;
       const challengesData = {
         creatorName: user?.name,
@@ -41,16 +40,19 @@ const ChallengesPage: React.FC = () => {
         progressTracking,
         duration,
         rewards,
-        price
+        price,
       };
       axios.post("/api/challenges", challengesData).then((res) => {
-        console.log(res.data);
+        try {
+          console.log(res.data);
+          toast.success("New Challenges Successfully added");
+          refetch();
+          reset();
+          router.push(`/dashboard/myChallenges`);
+        } catch (error: any) {
+          toast.error(error.message);
+        }
       });
-      toast.success("New Challenges Successfully added");
-      reset();
-      refetch();
-      router.push(`/dashboard/myChallenges`)
-
     } catch (error: any) {
       toast.error(error.message);
     }

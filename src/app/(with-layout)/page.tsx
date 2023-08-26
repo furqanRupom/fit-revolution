@@ -2,6 +2,7 @@
 import appwriteService from "@/appwrite/config";
 import Hero from "@/components/Hero";
 import Instructor from "@/components/Instructor";
+import PricingPlan from "@/components/PricingPlan";
 import Progress from "@/components/Progress";
 import Raise from "@/components/Raise";
 import Service from "@/components/Service";
@@ -10,19 +11,21 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
-    <div className="mx-auto">
+    <section className="mx-auto">
       <Hero />
-      <div className="px-4 max-w-7xl mx-auto">
+      <section className="px-4 max-w-7xl mx-auto">
         <Progress />
         <Raise />
-      </div>
+      </section>
 
       <Instructor/>
 
 
-      <div className="px-4 max-w-7xl mx-auto">
+      <section className="px-4 max-w-7xl mx-auto">
         <Service />
-      </div>
-    </div>
+        <PricingPlan />
+      </section>
+
+    </section>
   );
 }
