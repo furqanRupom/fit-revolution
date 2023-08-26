@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Instructor from "@/components/Instructor";
 import Progress from "@/components/Progress";
 import Raise from "@/components/Raise";
+import Service from "@/components/Service";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -16,7 +17,12 @@ export default function Home() {
         <Raise />
       </div>
 
-      <Instructor />
+      <Instructor/>
+
+
+      <div className="px-4 max-w-7xl mx-auto">
+        <Service />
+      </div>
     </div>
   );
 }
