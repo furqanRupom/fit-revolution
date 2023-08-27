@@ -21,10 +21,6 @@ const barlow = Barlow({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: "Fit revolution app",
-};
 
 export default function RootLayout({
   children,

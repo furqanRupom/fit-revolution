@@ -34,6 +34,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
 
 
       <QueryClientProvider client={queryClient}>
+        <title>fitRevolution | dashboard</title>
 
       <section className="grid  lg:grid-cols-[0fr,4fr] min-h-screen">
       <div className={open ? "fixed bg-rose-500 lg:static z-50" : "hidden lg:block"}>

@@ -61,11 +61,11 @@ const Hero: React.FC = () => {
           <div className="max-w-5xl pl-16 pt-12 sm:pt-20 md:pt-44 lg:pl-24  lg:pt-64">
             <div className="flex items-center space-x-3">
               <div className="w-2 h-2 bg-red-500"></div>
-              <h2 className="text-lg  sm:text-2xl font-bold text-white uppercase pb-2">
+              <h2 className="text-lg  sm:text-3xl font-bold text-white uppercase pb-2">
                 Welcome to our company
               </h2>
             </div>
-            <div className="text-2xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left text-white">
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left text-white">
               <h1>The Best</h1>
               <h2 className="py-1">
                 {" "}

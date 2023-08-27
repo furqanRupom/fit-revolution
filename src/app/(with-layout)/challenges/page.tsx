@@ -1,4 +1,9 @@
 import ChallengeOpt from "@/components/ChallengeOpt";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: 'fitRevolution | Challenges',
+    description: 'This is our Challenges page'
+}
 
 const challengesPage= () => {
     return (

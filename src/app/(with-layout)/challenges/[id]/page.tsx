@@ -1,4 +1,6 @@
 import ChallengeDetails from "@/components/ChallengeDetails";
+import { Metadata } from "next";
+
 
 const challengeDetailsPage = ({params}:any) => {
 
