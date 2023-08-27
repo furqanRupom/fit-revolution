@@ -15,7 +15,7 @@ import {
 } from "react-icons/md";
 import Image from "next/image";
 
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
     <footer
       className=" mt-16"
@@ -27,7 +27,7 @@ const Footer = () => {
       }}
     >
       <section className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto  border-b-2 border-gray-200   lg:h-44">
-        <div className="p-3 flex items-center justify-center space-x-4 border-r-2 border-gray-200">
+        <div className="p-3 flex  lg:items-center lg:justify-center space-x-4 border-r-2 border-gray-200">
           <h1 className="text-2xl w-fit h-fit rounded-full text-black bg-white p-5 border">
             <FaLocationDot />
           </h1>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="p-3 flex items-center justify-center  space-x-4 border-r-2 border-gray-200">
+        <div className="p-3 flex  lg:items-center lg:justify-center  space-x-4 border-r-2 border-gray-200">
           <h1 className="text-2xl w-fit h-fit rounded-full text-black bg-white p-5 ">
             <FaMessage />
           </h1>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="p-3 flex items-center justify-center space-x-4 ">
+        <div className="p-3 flex  lg:items-center lg:justify-center space-x-4 ">
           <h1 className="text-2xl w-fit h-fit rounded-full text-black bg-white p-5 border">
             <FaPhone />
           </h1>
@@ -188,27 +188,27 @@ const Footer = () => {
             <p>Get 10% off your first order! Hurry up</p>
 
             <div className="mt-4 flex items-center space-x-4 bg-white border-2 rounded-md">
-                <div className="text-xl pl-2 text-gray-600">
+              <div className="text-xl pl-2 text-gray-600">
                 <MdMailOutline />
-
-                </div>
+              </div>
 
               <input
                 className="py-3 w-full bg-white focus:outline-none outline-none "
                 type="text"
                 placeholder="Your Email Address"
               />
-
             </div>
 
             <button className="px-5  py-4 font-bold  mt-2 uppercase text-white rounded-lg bg-gradient-to-tr from-red-500 to-rose-500 hover:bg-gradient-to-tr hover:from-rose-600 hover:to-red-500 duration-200 transition-all">
-             Subscribe
-              </button>
+              Subscribe
+            </button>
           </div>
         </div>
       </section>
 
-      <p className="text-center py-6 font-[500] mt-12 bg-white">Copyright © 2023 FitRevolution All Rights Reserved.</p>
+      <p className="text-center py-6 font-[500] mt-12 bg-white">
+        Copyright © 2023 FitRevolution All Rights Reserved.
+      </p>
     </footer>
   );
 };

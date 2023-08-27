@@ -33,10 +33,10 @@ const articlesPage = () => {
         </h3>
       </div>
       {!loading ? (
-        <section>
+        <section >
           {/* main part */}
 
-          <section className="my-12 mb-8">
+          <section className="my-12 mb-8 px-10 lg:px-10">
             <div className="flex items-center space-x-2 mt-12">
               <div className="w-[35%] h-[0.10rem] bg-gray-300"></div>
               <h2 className=" flex-grow text-2xl lg:text-3xl text-gray-600 text-center">

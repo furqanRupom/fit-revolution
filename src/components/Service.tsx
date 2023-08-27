@@ -31,7 +31,7 @@ const Service = () => {
   };
   return (
     <section className=" mt-44 mb-16 ">
-      <h1 className=" text-2xl  text-center lg:text-3xl py-12 xl:text-5xl font-bold ">
+      <h1 className="  text-center text-3xl py-12 xl:text-5xl font-bold ">
         Services we<span className="text-rose-500"> Provide</span>
       </h1>
 
