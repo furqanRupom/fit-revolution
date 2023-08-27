@@ -65,9 +65,9 @@ const Hero: React.FC = () => {
                 Welcome to our company
               </h2>
             </div>
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left text-white">
+            <div className="text-xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left text-white">
               <h1>The Best</h1>
-              <h2 className="py-1">
+              <h2 className=" sm:py-1">
                 {" "}
                 <span className="bg-gradient-to-tr from-red-500 to-rose-500 text-transparent bg-clip-text">
                   Fitness
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
                 Studio
               </h2>
               <h3> in Town</h3>
-              <button className="px-8 py-2 md:px-10 md:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base md:text-lg mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
+              <button className="px-4 py-1 md:px-10 md:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base md:text-lg  mt-3 sm:mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
                 Join Us
               </button>
             </div>
@@ -97,14 +97,14 @@ const Hero: React.FC = () => {
             <div className="w-2 h-2 bg-red-500"></div>
             <h2 className="text-lg  sm:text-2xl font-bold text-white uppercase pb-2">Welcome to our company</h2>
             </div>
-            <div className="text-2xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left  text-white">
+            <div className="text-xl sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left  text-white">
               <h1>The Best</h1>
-              <h2 className="py-1"> <span className="bg-gradient-to-tr from-red-500 to-rose-500  text-transparent bg-clip-text">Fitness</span> Studio</h2>
+              <h2 className="sm:py-1"> <span className="bg-gradient-to-tr from-red-500 to-rose-500  text-transparent bg-clip-text">Fitness</span> Studio</h2>
               <h3> in Town</h3>
 
-              <button className="px-8 py-2 md:px-10 md:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base md:text-lg mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
-                  Join Us
-          </button>
+              <button className="px-4 py-1 md:px-10 md:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base md:text-lg  mt-3 sm:mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
+                Join Us
+              </button>
 
             </div>
 
@@ -127,16 +127,16 @@ const Hero: React.FC = () => {
 
             <div className="flex items-center space-x-3">
             <div className="w-2 h-2 bg-red-500"></div>
-            <h2 className="text-lg  sm:text-2xl font-bold text-white uppercase pb-2">Welcome to our company</h2>
+            <h2 className="text-xl  sm:text-2xl font-bold text-white uppercase pb-2">Welcome to our company</h2>
             </div>
-            <div className="text-2xl  sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left  text-white">
+            <div className="text-xl  sm:text-4xl md:text-5xl lg:text-8xl font-[500] text-left  text-white">
               <h1>The Best</h1>
-              <h2 className="py-1"> <span className="bg-gradient-to-tr from-red-500 to-rose-500  text-transparent bg-clip-text">Fitness</span> Studio</h2>
+              <h2 className=" sm:py-1"> <span className="bg-gradient-to-tr from-red-500 to-rose-500  text-transparent bg-clip-text">Fitness</span> Studio</h2>
               <h3> in Town</h3>
 
-              <button className="px-8 py-2 sm:px-10 sm:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base sm:text-lg mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
-                  Join Us
-          </button>
+              <button className="px-4 py-1 md:px-10 md:py-4 rounded shadow-md bg-gradient-to-tr from-red-500 to-rose-500 text-white  text-base md:text-lg  mt-3 sm:mt-6 font-bold uppercase hover:bg-gradient-to-tr hover:from-red-600 hover:to-rose-600 duration-200">
+                Join Us
+              </button>
 
             </div>
 

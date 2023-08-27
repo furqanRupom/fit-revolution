@@ -10,7 +10,7 @@ const logOutPage = () => {
   useEffect(() => {
     appwriteService.logOut().then(() => {
       setAuthStatus(false);
-      router.push("/login");
+       router.push("/login");
     });
   }, []);
   return <></>;

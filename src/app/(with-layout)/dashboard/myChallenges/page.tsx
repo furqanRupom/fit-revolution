@@ -13,8 +13,12 @@ import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const myChallengesPage = () => {
- const {refetch,data} = useChallenge();
- const [loading,setLoading] = useState();
+ const {refetch,data,isLoading} = useChallenge();
+
+ if(data?.length == 0 ){
+  refetch();
+ }
+
 
 
   const handleDelete = (id: any) => {
@@ -44,7 +48,7 @@ const myChallengesPage = () => {
   };
 
 
- 
+
 
 
 

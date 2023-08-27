@@ -12,7 +12,7 @@ const useChallenge = () => {
         }
     })
 
-     return {refetch,data}
+     return {refetch,data,isLoading}
 
 };
 
