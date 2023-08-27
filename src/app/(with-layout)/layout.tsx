@@ -10,7 +10,6 @@ import appwriteService from "@/appwrite/config";
 import { AuthProvider } from "@/Context/authContext";
 import loading from "../../../public/gif.gif";
 import Image from "next/image";
-import TopHeader from "@/components/TopHeader";
 import {
   QueryClient,
   QueryClientProvider,
