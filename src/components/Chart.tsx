@@ -44,7 +44,6 @@ const Charts: React.FC = () => {
           animationEasing="linear"
           isAnimationActive
           animationBegin={0}
-          shape={customWaveLine}
         />
       </LineChart>
     </ResponsiveContainer>
