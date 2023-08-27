@@ -1,10 +1,10 @@
 import dbConnect from "@/db/dbConnect"
 import { users } from "@/models/users";
 import mongoose from "mongoose";
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { GiConsoleController } from "react-icons/gi";
 
-export const POST = async(request:NextResponse) =>{
+export const POST = async(request:NextRequest) =>{
     try {
         await dbConnect();
 
