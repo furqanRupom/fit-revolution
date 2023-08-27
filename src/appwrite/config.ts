@@ -1,5 +1,5 @@
 import { conf } from "@/conf/conf";
-import { Client, Account, ID } from "Appwrite";
+import { Client, Account, ID } from "appwrite";
 
 type CreateUserAccount = {
 email:string,
