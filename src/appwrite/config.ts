@@ -2,9 +2,9 @@ import { conf } from "@/conf/conf";
 import { Client, Account, ID } from "appwrite";
 
 type CreateUserAccount = {
-email:string,
-password:string
-name:string
+  email: string;
+  password: string;
+  name: string;
 };
 
 type LoginUserAccount = {
@@ -20,14 +20,13 @@ appWriteClient
   .setEndpoint("https://cloud.appwrite.io/v1")
   .setProject(process.env.PUBLIC_APPWRITE_PROJECT_ID!);
 
-
 // create new account;
 
 export const account = new Account(appWriteClient);
 export class AppWriteService {
   // create a new record of user inside appwrite
 
-  createUserAccount = async ({ email, password,name }: CreateUserAccount) => {
+  createUserAccount = async ({ email, password, name }: CreateUserAccount) => {
     try {
       // create new account
       const userAccount = await account.create(

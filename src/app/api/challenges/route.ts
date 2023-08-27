@@ -2,7 +2,7 @@ import dbConnect from "@/db/dbConnect";
 import { Challenges } from "@/models/challenges";
 import { NextRequest, NextResponse } from "next/server";
 
-export const POST = async (request: NextResponse) => {
+export const POST = async (request: NextRequest) => {
   try {
     await dbConnect();
     const reqBody = await request.json();
